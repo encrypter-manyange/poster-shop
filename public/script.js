@@ -38,6 +38,14 @@ new Vue({
 					qty: 1
 				});
 			}
+		},
+		inc:function (item) {
+			item.qty ++;
+			this.total+=item.price;
+		},
+		dec:function (item) {
+			item.qty --;
+			this.total-=item.price;
 		}
 	},
 	filters:{
