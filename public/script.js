@@ -4,22 +4,7 @@ new Vue({
 		total: 0.00,
 		cart:[],
 		search:"",
-		products: [{
-				title: "Product One",
-				id: 1,
-				price: 10
-			},
-			{
-				title: "Product Two",
-				id: 2,
-				price: 11
-			},
-			{
-				title: "Product Three",
-				id: 3,
-				price: 5
-			}
-		]
+		products: []
 	},
 	methods: {
 		addToCart: function(product) {
@@ -54,7 +39,12 @@ new Vue({
 			
 		},
 		onSubmit:function (){
-			console.log("onSubmit");
+			var path = "/search?q=".concat(this.search);
+			this.$http
+				.get(path)
+				.then(function(response) {
+					this.products =  response.body;
+				});
 		}
 	},
 	filters:{
