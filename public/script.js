@@ -3,7 +3,7 @@ new Vue({
 	data: {
 		total: 0.00,
 		cart:[],
-		search:"",
+		search:"cat",
 		lastSearch:"",
 		products: [],
 		loading:true
@@ -53,9 +53,13 @@ new Vue({
 				});
 		}
 	},
+	created:function(){
+		this.onSubmit();
+	},
 	filters:{
 		currency:function (price) {
 							return "$".concat(price.toFixed(2));
 						}
 }
+
 });

@@ -60,10 +60,12 @@
 							<button class="btn" v-on:click="dec(item)">-</button>
 					</li>
 				</ul>
+				<transition name="fade">
 					<div v-if="cart.length" class="cart-total">
 							Total: {{total|currency}}
 					</div>
-					<div v-else class="empty-cart">
+				</transition>	
+					<div v-if class="cart.length===0">
 						No Items In The Cart!
 					</div>
                 
