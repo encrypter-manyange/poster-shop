@@ -3,6 +3,7 @@ new Vue({
 	data: {
 		total: 0.00,
 		cart:[],
+		search:"",
 		products: [{
 				title: "Product One",
 				id: 1,
@@ -51,6 +52,9 @@ new Vue({
 			this.cart.splice(i,1);
 			}
 			
+		},
+		onSubmit:function (){
+			console.log("onSubmit");
 		}
 	},
 	filters:{

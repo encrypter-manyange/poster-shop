@@ -18,7 +18,11 @@
             <div class="title">
                 <img src="public/logo.png">
                 <h1>Shop for Encrypter</h1>
-            </div>
+			</div>
+			<form class="search-bar" v-on:submit.prevent="onSubmit" >
+				<input type="text" placeholder="Seach for Item" required v-model="search">
+				<input type="submit" value="Search" class="btn">
+			</form>
         </div>
     </div>
     <div class="main container">
