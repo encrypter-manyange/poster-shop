@@ -46,6 +46,11 @@ new Vue({
 		dec:function (item) {
 			item.qty --;
 			this.total-=item.price;
+			if (item.qty<=0) {
+			var i = this.cart.indexOf(item);
+			this.cart.splice(i,1);
+			}
+			
 		}
 	},
 	filters:{
