@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="referrer" content="never" />
     <title>Encrypter Shop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Here is a precise description of my awesome webpage.">
     <link rel="shortcut icon" type="image/x-icon" href="/public/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
@@ -36,11 +37,11 @@
 				<ul >
 					<li v-for="item in cart" v-bind:key="item.id" class="cart-item">
 							<div class="item-title">{{ item.title }}</div>
-							<span class="item-qty">{{ item.price }} x {{ item.qty }}</span>
+							<span class="item-qty">{{ item.price | currency }} x {{ item.qty }}</span>
 					</li>
 				</ul>
 					<div v-if="cart.length" class="cart-total">
-							Total: {{total}}
+							Total: {{total|currency}}
 					</div>
 					<div v-else class="empty-cart">
 						No Items In The Cart!
